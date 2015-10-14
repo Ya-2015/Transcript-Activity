@@ -5,11 +5,6 @@ import java.util.ArrayList;
 
 public class Transcript {
 	ArrayList<CourseEnrollment> courses = new ArrayList<CourseEnrollment>();
-	NumberFormat formatter = NumberFormat.getInstance();
-	
-	public Transcript(){
-		formatter.setMaximumFractionDigits(1);
-	}
 	
 	public ArrayList<CourseEnrollment> getCourse(){
 		return courses;
@@ -36,7 +31,10 @@ public class Transcript {
 		return gpa;
 	}
 	
-	public String getFormattedGPA(){		
+	public String getFormattedGPA(){
+		NumberFormat formatter = NumberFormat.getInstance();
+		formatter.setMaximumFractionDigits(1);
+		
 		return formatter.format(getOverallGPA());
 	}
 	
