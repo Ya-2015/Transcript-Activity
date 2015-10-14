@@ -1,4 +1,5 @@
 package TranscriptActivity;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class TranscriptApp {
@@ -13,7 +14,21 @@ public class TranscriptApp {
 			CourseEnrollment course = new CourseEnrollment();
 			course.setCode(scan, "\nEnter Course: ");
 			course.setCredtis(scan, "Enter Credits: ");
-			course.setGrade(scan, "Enter Grade: ");
+			
+			boolean flag;
+			do{
+				flag = false;
+				try{
+					course.setGrade(scan, "Enter Grade: ");
+					flag = true;
+				}catch(CustomException e){
+					System.out.println(e.getMessage());
+				}catch(Exception e){
+					e.printStackTrace();
+				}finally{
+					System.out.println("Valide Grades: "+Arrays.deepToString(CourseEnrollment.VALID_GRADES));
+				}
+			}while(!flag);
 			
 			transcript.addCourse(course);
 			
