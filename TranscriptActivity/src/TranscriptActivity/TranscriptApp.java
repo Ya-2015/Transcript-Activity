@@ -22,7 +22,7 @@ public class TranscriptApp {
 		System.out.println(String.format("\n%-15s","Course") + "\t" + "Credits" + "\t" + "Grade" + "\t" + "Quality Points");
 		System.out.println(String.format("%-15s","-------") + "\t" + "-----" + "\t" + "-----" + "\t" + "-----");
 		for (CourseEnrollment c : transcript.getCourse()){
-			System.out.println(String.format("%-20s",c.getCode()) + "\t" + c.getCredtis() + "\t" + c.getGrade() + "\t" + c.getPoints());
+			System.out.println(String.format("%-15s",c.getCode()) + "\t" + c.getCredtis() + "\t" + c.getGrade() + "\t" + c.getPoints());
 			
 		}
 		
