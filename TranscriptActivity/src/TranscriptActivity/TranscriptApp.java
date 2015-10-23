@@ -1,10 +1,11 @@
 package TranscriptActivity;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class TranscriptApp {
-	public static void main(String[] args) {
-		Transcript transcript = new Transcript();
+	public static void main(String[] args) throws SQLException {
+		TranscriptDB transcript = new TranscriptDB();
 		Scanner scan = new Scanner(System.in);
 		
 		System.out.println("Welcome to the transcript application.");
@@ -33,6 +34,9 @@ public class TranscriptApp {
 			transcript.addCourse(course);
 			
 		}while(Validator.getString(scan, "Another Course? (y/n): ").equalsIgnoreCase("y"));
+		
+		//calculate GPA
+		transcript.calculateGPA();
 		
 		System.out.println(String.format("\n%-15s","Course") + "\t" + "Credits" + "\t" + "Grade" + "\t" + "Quality Points");
 		System.out.println(String.format("%-15s","-------") + "\t" + "-----" + "\t" + "-----" + "\t" + "-----");

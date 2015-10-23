@@ -19,11 +19,19 @@ public class CourseEnrollment {
 	public void setCode(Scanner sc, String prompt) {
 		this.code = Validator.getString(sc, prompt);;
 	}
+	
+	public void setCode(String code)
+	{
+		this.code = code;
+	}
 	public int getCredtis() {
 		return credtis;
 	}
 	public void setCredtis(Scanner sc, String prompt){
 		this.credtis = Validator.getInt(sc, prompt, CREDIT_MIN, CREDIT_MAX);
+	}
+	public void setCredits(int credit){
+		this.credtis = credit;
 	}
 	public String getGrade() {
 		return grade;
@@ -36,6 +44,10 @@ public class CourseEnrollment {
 		}
 		
 		this.grade = gd;
+	}
+	
+	public void setGrade(String grade){
+		this.grade = grade;
 	}
 
 	public double getPoints() {
